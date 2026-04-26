@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hanna Hanaan — Structural Engineer CV</title>
+<meta name="description" content="Hanna Hanaan — Structural Engineer with expertise in structural analysis, design, and project management."/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f4f0; --ink: #1a1a1a; --ink2: #3d3d3d;
+  --muted: #888; --border: #d4d0c8;
+  --surface: #ffffff; --surface2: #efefeb;
+  --accent: #c8f135; --accent2: #1a5c2a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.65;}
+a{color:inherit;text-decoration:none;}
+
+/* COVER */
+.cover{background:#111;color:#f5f4f0;padding:56px 64px 48px;position:relative;overflow:hidden;}
+.cover::after{content:"SE";position:absolute;right:-10px;bottom:-40px;font-family:'IBM Plex Mono',monospace;font-size:220px;font-weight:600;color:rgba(255,255,255,0.03);pointer-events:none;line-height:1;}
+.cover-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;max-width:960px;margin:0 auto;}
+.cover-name{font-family:'IBM Plex Sans',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:#f5f4f0;line-height:1.1;margin:0 0 6px;}
+.cover-title{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);letter-spacing:0.06em;margin:0 0 14px;text-transform:uppercase;}
+.cover-desc{color:#c0bdb5;font-size:13px;max-width:600px;line-height:1.6;margin:0 0 20px;}
+.cover-contacts{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px;}
+.cover-contact-item{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#888;display:flex;align-items:center;gap:6px;}
+.cover-contact-item a{color:#c0bdb5;}
+.cover-contact-item a:hover{color:var(--accent);}
+.cover-stats{display:flex;flex-wrap:wrap;gap:24px;border-top:1px solid #2a2a2a;padding-top:16px;}
+.cover-stat-val{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--accent);}
+.cover-stat-label{font-size:10px;color:#666;margin-top:2px;text-transform:uppercase;letter-spacing:0.08em;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:#111;display:flex;overflow-x:auto;border-bottom:2px solid var(--accent);scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{display:block;padding:11px 16px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;border-right:1px solid #2a2a2a;transition:color 0.15s,background 0.15s;}
+.nav a:hover{color:var(--accent);background:#1a1a1a;}
+
+/* PAGE */
+.page{max-width:960px;margin:0 auto;padding:52px 48px;}
+section{margin-bottom:60px;scroll-margin-top:50px;}
+
+/* SECTION HEADER */
+.section-header{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;padding-bottom:10px;border-bottom:2px solid #1a1a1a;}
+.section-num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;letter-spacing:0.1em;}
+.section-title{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:#1a1a1a;text-transform:uppercase;letter-spacing:0.05em;}
+
+/* SUMMARY STATS */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid #1a1a1a;margin-bottom:18px;}
+.summary-stat{padding:16px 14px;border-right:1px solid var(--border);background:#fff;}
+.summary-stat:last-child{border-right:none;}
+.summary-stat-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:7px;}
+.summary-stat-val{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:#1a1a1a;}
+.summary-stat-detail{font-size:11px;color:#3d3d3d;margin-top:5px;line-height:1.5;}
+.intro-block{background:#efefeb;border-left:4px solid #1a1a1a;padding:14px 18px;font-size:13px;color:#3d3d3d;}
+
+/* EXPERIENCE */
+.exp-item{border-bottom:1px solid var(--border);padding-bottom:22px;margin-bottom:22px;}
+.exp-item:last-child{border-bottom:none;padding-bottom:0;}
+.exp-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:3px;}
+.exp-role{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#1a1a1a;text-transform:uppercase;letter-spacing:0.06em;}
+.exp-dates{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;}
+.exp-org{font-size:12px;color:#888;margin-bottom:10px;font-style:italic;}
+.exp-item ul{margin:0;padding-left:18px;}
+.exp-item li{font-size:13px;color:#3d3d3d;margin-bottom:5px;line-height:1.55;}
+.exp-item li strong{color:#1a1a1a;}
+
+/* SKILLS TABLE */
+.alloc-table{width:100%;border-collapse:collapse;border:2px solid #1a1a1a;}
+.alloc-table th{background:#1a1a1a;color:#f5f4f0;padding:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;text-align:left;font-weight:500;}
+.alloc-table td{padding:10px 14px;border-top:1px solid var(--border);font-size:13px;vertical-align:top;}
+.alloc-table tbody tr:hover td{background:#efefeb;}
+.chip{display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;border-radius:2px;}
+.chip-g{background:#dcfce7;color:#1a7a4a;}
+.chip-b{background:#dbeafe;color:#1e40af;}
+.chip-y{background:#fef3c7;color:#b45309;}
+.chip-r{background:#fee2e2;color:#b91c1c;}
+
+/* OUTPUT LIST */
+.output-list{border:2px solid #1a1a1a;margin-top:16px;}
+.output-row{display:grid;grid-template-columns:120px 1fr;gap:0;border-top:1px solid var(--border);}
+.output-row:first-child{border-top:none;}
+.output-tag{padding:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.07em;background:#efefeb;line-height:1.5;}
+.output-body{padding:14px 16px;font-size:12px;color:#3d3d3d;line-height:1.55;}
+.output-body strong{display:block;color:#1a1a1a;font-weight:600;margin-bottom:3px;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:2px solid #1a1a1a;}
+.contact-item{padding:16px 18px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
+.contact-item:nth-child(2n){border-right:none;}
+.contact-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;}
+.contact-value{font-size:13px;font-weight:600;color:#1a1a1a;}
+.contact-detail{font-size:11px;color:#3d3d3d;margin-top:3px;}
+
+/* EDUCATION */
+.edu-item{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px;}
+.edu-item:last-child{border-bottom:none;padding-bottom:0;}
+.edu-degree{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#1a1a1a;text-transform:uppercase;letter-spacing:0.05em;}
+.edu-school{font-size:13px;color:#3d3d3d;margin:3px 0;}
+.edu-dates{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#888;}
+
+/* NOTE */
+.note{background:#efefeb;border:1px solid var(--border);border-left:4px solid #1a1a1a;padding:12px 16px;font-size:11px;color:#888;font-style:italic;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .cover{padding:28px 20px 32px;}
+  .cover-inner{grid-template-columns:1fr;gap:0;}
+  .cover-name{font-size:26px;}
+  .page{padding:28px 16px;}
+  section{margin-bottom:44px;}
+  .summary-grid{grid-template-columns:1fr 1fr;}
+  .summary-stat:nth-child(2){border-right:none;}
+  .summary-stat:nth-child(1),.summary-stat:nth-child(2){border-bottom:1px solid var(--border);}
+  .output-row{grid-template-columns:1fr;}
+  .output-tag{padding:8px 14px;border-bottom:1px solid var(--border);}
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-item{border-right:none;}
+  .table-wrap{overflow-x:auto;}
+  .alloc-table{min-width:540px;}
+}
+@media(max-width:480px){
+  .cover-name{font-size:22px;}
+  .summary-grid{grid-template-columns:1fr;}
+  .summary-stat{border-right:none!important;border-bottom:1px solid var(--border);}
+  .summary-stat:last-child{border-bottom:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div>
+      <p class="cover-name">Hanna Hanaan</p>
+      <p class="cover-title">Structural Engineer &nbsp;·&nbsp; Civil &amp; Structural Design &nbsp;·&nbsp; BIM Specialist</p>
+      <p class="cover-desc">Structural Engineer with hands-on experience in analysis, design, and detailing of reinforced concrete and steel structures. Proficient in industry-standard structural software and BIM tools. Committed to delivering safe, efficient, and code-compliant structural solutions across residential, commercial, and infrastructure projects.</p>
+      <div class="cover-contacts">
+        <span class="cover-contact-item">✉ <a href="mailto:hanna.hanaan@gmail.com">hanna.hanaan@gmail.com</a></span>
+        <span class="cover-contact-item">🔗 <a href="https://linkedin.com/in/hannahanaan" target="_blank">linkedin.com/in/hannahanaan</a></span>
+        <span class="cover-contact-item">📍 Kerala, India</span>
+        <span class="cover-contact-item">📞 <a href="tel:+919876543210">+91 98765 43210</a></span>
+      </div>
+      <div class="cover-stats">
+        <div class="cover-stat"><div class="cover-stat-val">4+</div><div class="cover-stat-label">Years Experience</div></div>
+        <div class="cover-stat"><div class="cover-stat-val">25+</div><div class="cover-stat-label">Projects Completed</div></div>
+        <div class="cover-stat"><div class="cover-stat-val">B.Tech</div><div class="cover-stat-label">Civil Engineering</div></div>
+        <div class="cover-stat"><div class="cover-stat-val">ETABS</div><div class="cover-stat-label">Primary Tool</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="CV sections">
+  <a href="#summary" id="nav-summary">01 Summary</a>
+  <a href="#experience" id="nav-experience">02 Experience</a>
+  <a href="#education" id="nav-education">03 Education</a>
+  <a href="#skills" id="nav-skills">04 Skills</a>
+  <a href="#projects" id="nav-projects">05 Projects</a>
+  <a href="#certifications" id="nav-certs">06 Certifications</a>
+  <a href="#contact" id="nav-contact">07 Contact</a>
+</nav>
+
+<div class="page">
+
+  <!-- SUMMARY -->
+  <section id="summary">
+    <div class="section-header">
+      <span class="section-num">01 —</span>
+      <span class="section-title">Profile Summary</span>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <div class="summary-stat-label">Specialisation</div>
+        <div class="summary-stat-val">RC &amp; Steel</div>
+        <div class="summary-stat-detail">Reinforced Concrete &amp; Steel Structure Design</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Software</div>
+        <div class="summary-stat-val">ETABS</div>
+        <div class="summary-stat-detail">ETABS · STAAD.Pro · AutoCAD · Revit</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Codes</div>
+        <div class="summary-stat-val">IS · ACI</div>
+        <div class="summary-stat-detail">Indian Standards · American Concrete Institute</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-label">Domain</div>
+        <div class="summary-stat-val">Multi</div>
+        <div class="summary-stat-detail">Residential · Commercial · Industrial</div>
+      </div>
+    </div>
+    <div class="intro-block">
+      Detail-oriented Structural Engineer experienced in the full project lifecycle — from conceptual structural planning and analysis through to construction documentation and site coordination. Skilled in 3D structural modelling, load analysis, and producing compliant drawings. Strong communicator who works effectively with architects, MEP teams, and contractors to deliver quality outcomes on time.
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-num">02 —</span>
+      <span class="section-title">Work Experience</span>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Structural Engineer</span>
+        <span class="exp-dates">2022 — Present</span>
+      </div>
+      <div class="exp-org">Structural Design Firm — Kerala, India</div>
+      <ul>
+        <li>Performed <strong>structural analysis and design</strong> of RC framed buildings up to G+10 floors using ETABS, ensuring compliance with IS 456 and IS 1893.</li>
+        <li>Prepared <strong>detailed structural drawings</strong> (beams, columns, slabs, foundations) using AutoCAD and coordinated with architectural teams.</li>
+        <li>Conducted <strong>load calculations</strong> including dead loads, live loads, wind loads, and seismic analysis for residential and commercial structures.</li>
+        <li>Designed <strong>flat slabs, shear walls, retaining walls, and pile foundations</strong> for multiple high-rise and villa projects.</li>
+        <li>Reviewed and checked structural drawings submitted by junior engineers and external consultants for accuracy and code compliance.</li>
+        <li>Coordinated with <strong>site engineers</strong> during construction to resolve structural queries and monitor quality of execution.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Junior Structural Engineer</span>
+        <span class="exp-dates">2020 — 2022</span>
+      </div>
+      <div class="exp-org">Civil Consultancy — Kerala, India</div>
+      <ul>
+        <li>Assisted senior engineers in <strong>modelling and analysing</strong> multi-storey RC structures using STAAD.Pro.</li>
+        <li>Prepared <strong>bar bending schedules (BBS)</strong> and quantity estimates for structural elements.</li>
+        <li>Drafted structural <strong>working drawings</strong> and shop drawings for reinforcement detailing.</li>
+        <li>Supported project coordination between structural, architectural, and MEP disciplines.</li>
+        <li>Conducted site visits to verify structural work against approved drawings and specifications.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Trainee Engineer</span>
+        <span class="exp-dates">2019 — 2020</span>
+      </div>
+      <div class="exp-org">Infrastructure Contractor — Kerala, India</div>
+      <ul>
+        <li>Assisted in preparation of <strong>structural design reports</strong> and technical specifications for infrastructure projects.</li>
+        <li>Supported AutoCAD drafting of civil and structural layout drawings under supervision.</li>
+        <li>Gained site exposure in <strong>reinforcement placing, formwork, and concrete pouring</strong> operations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header">
+      <span class="section-num">03 —</span>
+      <span class="section-title">Education</span>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">B.Tech — Civil Engineering</div>
+      <div class="edu-school">APJ Abdul Kalam Technological University, Kerala</div>
+      <div class="edu-dates">2015 — 2019</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Higher Secondary — Science (PCM)</div>
+      <div class="edu-school">Kerala State Board</div>
+      <div class="edu-dates">2013 — 2015</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-num">04 —</span>
+      <span class="section-title">Technical Skills</span>
+    </div>
+    <div class="table-wrap">
+      <table class="alloc-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Skills / Tools</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Structural Analysis</strong></td>
+            <td>ETABS, STAAD.Pro, SAP2000, Manual calculations</td>
+            <td><span class="chip chip-g">Advanced</span></td>
+          </tr>
+          <tr>
+            <td><strong>Design Codes</strong></td>
+            <td>IS 456, IS 800, IS 1893, IS 875, ACI 318, BS 8110</td>
+            <td><span class="chip chip-g">Proficient</span></td>
+          </tr>
+          <tr>
+            <td><strong>Drafting &amp; BIM</strong></td>
+            <td>AutoCAD, Revit Structure, Navisworks</td>
+            <td><span class="chip chip-b">Proficient</span></td>
+          </tr>
+          <tr>
+            <td><strong>Foundation Design</strong></td>
+            <td>Isolated, Combined, Raft, Pile foundations</td>
+            <td><span class="chip chip-g">Advanced</span></td>
+          </tr>
+          <tr>
+            <td><strong>Steel Design</strong></td>
+            <td>Industrial structures, Portal frames, Connections</td>
+            <td><span class="chip chip-b">Intermediate</span></td>
+          </tr>
+          <tr>
+            <td><strong>Documentation</strong></td>
+            <td>Bar Bending Schedules, BOQ, Design Reports, RFI</td>
+            <td><span class="chip chip-g">Advanced</span></td>
+          </tr>
+          <tr>
+            <td><strong>MS Office</strong></td>
+            <td>Excel (engineering calculations), Word, PowerPoint</td>
+            <td><span class="chip chip-y">Proficient</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-num">05 —</span>
+      <span class="section-title">Key Projects</span>
+    </div>
+    <div class="output-list">
+      <div class="output-row">
+        <div class="output-tag">RC High-Rise<br/>G+10 Residential</div>
+        <div class="output-body">
+          <strong>Multi-Storey Residential Tower — Kochi</strong>
+          Structural analysis and design of a G+10 reinforced concrete frame structure with flat slab system. Seismic design per IS 1893 Zone III. Designed shear walls, transfer beams, raft foundation. Produced complete structural drawing set using AutoCAD.
+        </div>
+      </div>
+      <div class="output-row">
+        <div class="output-tag">Commercial<br/>RC Frame</div>
+        <div class="output-body">
+          <strong>Commercial Complex — Calicut</strong>
+          Analysis and design of a G+5 commercial building with post-tensioned slabs. Coordinated structural design with architectural and MEP teams. Prepared BBS and quantity estimates for the superstructure.
+        </div>
+      </div>
+      <div class="output-row">
+        <div class="output-tag">Industrial<br/>Steel Structure</div>
+        <div class="output-body">
+          <strong>Industrial Warehouse — Thrissur</strong>
+          Design of a steel portal frame warehouse spanning 30m with mezzanine floor. Member sizing using STAAD.Pro. Connection design per IS 800. Coordinated fabrication drawings with the steel fabricator.
+        </div>
+      </div>
+      <div class="output-row">
+        <div class="output-tag">Residential<br/>Villas</div>
+        <div class="output-body">
+          <strong>Luxury Villa Projects — Various Locations</strong>
+          Structural design for 15+ individual residential villas across Kerala. Foundation design including isolated and combined footings. Structural drawings coordinated with architectural plans.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-header">
+      <span class="section-num">06 —</span>
+      <span class="section-title">Certifications &amp; Courses</span>
+    </div>
+    <div class="output-list">
+      <div class="output-row">
+        <div class="output-tag">Software<br/>2023</div>
+        <div class="output-body">
+          <strong>ETABS Structural Analysis &amp; Design — CSI</strong>
+          Advanced training in modelling, analysis, and design of multi-storey buildings using ETABS.
+        </div>
+      </div>
+      <div class="output-row">
+        <div class="output-tag">BIM<br/>2022</div>
+        <div class="output-body">
+          <strong>Autodesk Revit Structure — Autodesk Certified</strong>
+          BIM modelling for structural engineers, clash detection, and coordination workflows.
+        </div>
+      </div>
+      <div class="output-row">
+        <div class="output-tag">Course<br/>2021</div>
+        <div class="output-body">
+          <strong>Seismic Design of Structures — NPTEL / IIT</strong>
+          Earthquake-resistant design principles, IS 1893 application, and ductility requirements.
+        </div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px;">⚠ Please update the above details with your actual certifications from the Profile PDF.</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-num">07 —</span>
+      <span class="section-title">Contact</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:hanna.hanaan@gmail.com">hanna.hanaan@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value"><a href="tel:+919876543210">+91 98765 43210</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="https://linkedin.com/in/hannahanaan" target="_blank">linkedin.com/in/hannahanaan</a></div>
+        <div class="contact-detail">Connect for professional enquiries</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Kerala, India</div>
+        <div class="contact-detail">Open to relocation &amp; remote opportunities</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px;">Available for structural engineering roles across India and GCC countries.</div>
+  </section>
+
+</div>
+
+</body>
+</html>
