@@ -2,7 +2,7 @@
 
 Personal CV website built with HTML/CSS, published via GitHub Pages.
 
-**Live site:** https://hannahanaan.github.io/cv
+**Live site:** https://hannahanaanhaq.github.io/cv/
 
 ## Setup
 
